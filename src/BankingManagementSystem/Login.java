@@ -2,9 +2,15 @@ package BankingManagementSystem;
 
 import javax.swing.*;
 import java.awt.*; // for image
+import java.awt.event.*;// to perform action and on clicking action is performed
 
 
-public class Login  extends JFrame {
+public class Login  extends JFrame implements ActionListener {
+
+    JButton login, Clear, signup;// Globally defining buttons
+    JTextField cardTextField;// Globally defining text field (used to add a box to enter data)
+    JPasswordField pinTextField; // pin will be entered as password
+
     Login() {// constructor
         setTitle("Automated Teller Machine");// to give title
         setLayout(null);
@@ -30,8 +36,9 @@ public class Login  extends JFrame {
         add(cardno);
 
         //adding a text box for Card no
-        JTextField cardTextField = new JTextField();
+        cardTextField = new JTextField();
         cardTextField.setBounds(300,150,230,30);
+        cardTextField.setFont(new Font("Arial", Font.BOLD,14));
         add(cardTextField);
 
 
@@ -42,15 +49,16 @@ public class Login  extends JFrame {
         add(pin);
 
         //adding a text box for Pin
-        JTextField pinTextField = new JTextField();
+        pinTextField = new JPasswordField();
         pinTextField.setBounds(300,220,230,30);
         add(pinTextField);
 
         // adding a button for sign in
-        JButton login = new JButton(" SIGN IN");
+        login = new JButton(" SIGN IN");
         login.setBounds(300, 300,100,30);
         login.setBackground(Color.BLACK);
         login.setForeground(Color.WHITE);
+        login.addActionListener(this);
 
         login.setOpaque(true);// allows background color to show
         login.setBorderPainted(false);// remove default os styling
@@ -58,10 +66,11 @@ public class Login  extends JFrame {
         add(login);
 
         // adding a button for clear
-        JButton Clear = new JButton("Clear ");
+        Clear = new JButton("Clear ");
         Clear.setBounds(430, 300,100,30);
         Clear.setBackground(Color.BLACK);
         Clear.setForeground(Color.WHITE);
+        Clear.addActionListener(this);
 
         Clear.setOpaque(true);// allows background color to show
         Clear.setBorderPainted(false);// remove default os styling
@@ -69,10 +78,11 @@ public class Login  extends JFrame {
         add(Clear);
 
         // adding a button for sign in
-        JButton signup = new JButton(" SIGN UP");
+        signup = new JButton(" SIGN UP");
         signup.setBounds(300, 350,230,30);
         signup.setBackground(Color.BLACK);
         signup.setForeground(Color.WHITE);
+        signup.addActionListener(this);
 
         signup.setOpaque(true);// allows background color to show
         signup.setBorderPainted(false);// remove default os styling
@@ -90,6 +100,24 @@ public class Login  extends JFrame {
         setSize(800, 480); // to make a frame
         setVisible(true);// to show frame
         setLocation(350, 200);// top left origin
+    }
+    public void actionPerformed(ActionEvent ae){
+        if(ae.getSource()==Clear){
+            // action perform when this button is clicked
+            cardTextField.setText("");
+            pinTextField.setText("");
+
+        }
+        if(ae.getSource()==login){
+            // action perform
+
+        }
+        if(ae.getSource()==signup){
+            // action perform
+
+        }
+
+
     }
 
     public static void main(String[] args) {
