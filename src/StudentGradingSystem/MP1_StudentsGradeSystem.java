@@ -1,3 +1,5 @@
+package StudentGradingSystem;
+
 import java.util.*;
 
 public class MP1_StudentsGradeSystem {
