@@ -34,6 +34,7 @@ public class Login  extends JFrame {
         cardTextField.setBounds(300,150,250,30);
         add(cardTextField);
 
+
         //adding pin
         JLabel pin  =new JLabel("PIN: ");// JLabel is used to display text
         pin.setFont(new Font("Raleway", Font.BOLD, 28));//to set font
